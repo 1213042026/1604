@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC   
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"   
+     "http://struts.apache.org/dtds/struts-2.0.dtd">
+     
+     
+<struts>
+    <package name="liu" extends="struts-default">
+        <global-results>
+            <result name="succeed">/common/succeed.jsp</result>
+            <result name="successAdd">/common/add_success.jsp</result>
+            <result name="successDel">/common/del_success.jsp</result>
+            <result name="successUpdate">/common/update_success.jsp</result>
+        </global-results>
+        <action name="login" class="adminAction" method="login">
+			<result name="yes">/admin/index.jsp</result>
+			<result name="no">/admin/login.jsp</result>
+			
+		</action>
+		<action name="loginout" class="adminAction" method="loginout">
+			<result name="success">/admin/login.jsp</result>
+		</action>
+		
+		<action name="adminupdatepwd" class="adminAction" method="adminupdatepwd">
+			<result name="success">/admin/adminupdatepwd.jsp</result>
+		</action>
+		
+		<action name="adminmana" class="adminAction" method="mana">
+			<result name="success">/admin/adminlist.jsp</result>
+		</action>
+		
+		<action name="adminmodifybefore" class="adminAction" method="modifybefore">
+			<result name="success">/admin/adminmodify.jsp</result>
+		</action>
+		
+		<action name="adminadd" class="adminAction" method="add">
+		</action>
+		<action name="admindel" class="adminAction" method="del">
+		</action>
+		<action name="adminmodify" class="adminAction" method="modify">
+		</action>
+		<!-- Demo开始 -->
+		<action name="viewgmzn" class="demoAction" method="viewgmzn">
+			<result name="success">/admin/gmznadd.jsp</result>
+		</action>
+		<action name="modifygmzn" class="demoAction" method="modifygmzn">
+		</action>
+		<action name="demomana" class="demoAction" method="mana">
+			<result name="success">/admin/demolist.jsp</result>
+		</action>
+		<action name="demoindex" class="demoAction" method="demoindex">
+			<result name="success">/qt/gmzn.jsp</result>
+		</action>
+		<!-- Demo结束 -->
+		
+		<action name="tsmana" class="tsAction" method="mana">
+			<result name="success">/admin/tslist.jsp</result>
+		</action>
+		<action name="tsmana2" class="tsAction" method="mana2">
+			<result name="success">/admin/tslist2.jsp</result>
+		</action>
+		<action name="tsmodifybefore" class="tsAction" method="modifybefore">
+			<result name="success">/admin/tsmodify.jsp</result>
+		</action>
+		
+		<action name="tsaddbefore" class="tsAction" method="addbefore">
+			<result name="success">/admin/tsadd.jsp</result>
+		</action>
+		
+		<action name="tsadd" class="tsAction" method="add">
+		</action>
+		<action name="tsdel" class="tsAction" method="del">
+		</action>
+		<action name="tsbg" class="tsAction" method="tsbg">
+		</action>
+		<action name="tsjg" class="tsAction" method="tsjg">
+		</action>
+		<action name="hf" class="tsAction" method="hf">
+		</action>
+		<action name="carmana" class="carAction" method="mana">
+			<result name="success">/admin/carlist.jsp</result>
+		</action>
+		<action name="carmanatj" class="carAction" method="carmanatj">
+			<result name="success">/admin/carlisttj.jsp</result>
+		</action>
+		
+		<action name="yymana" class="carAction" method="yymana">
+			<result name="success">/admin/yylist.jsp</result>
+		</action>
+		<action name="yymana2" class="carAction" method="yymana2">
+			<result name="success">/admin/yylist2.jsp</result>
+		</action>
+		<action name="carmana2" class="carAction" method="mana2">
+			<result name="success">/admin/carlist2.jsp</result>
+		</action>
+		<action name="carmodifybefore" class="carAction" method="modifybefore">
+			<result name="success">/admin/carmodify.jsp</result>
+		</action>
+		<action name="caraddbefore" class="carAction" method="caraddbefore">
+			<result name="success">/admin/caradd.jsp</result>
+		</action>
+		
+		<action name="caradd" class="carAction" method="add">
+		</action>
+		<action name="cardel" class="carAction" method="del">
+		</action>
+		<action name="carmodify" class="carAction" method="modify">
+		</action>
+		<action name="yyadd" class="carAction" method="yyadd">
+		</action>
+		<action name="yymb" class="carAction" method="yymb">
+		<result name="success">/admin/yymodify.jsp</result>
+		</action>
+		<action name="yydel" class="carAction" method="yydel">
+		</action>
+		<action name="yymodify" class="carAction" method="yymodify">
+		</action>
+		<action name="yyshtg" class="carAction" method="yyshtg">
+		</action>
+		<action name="yyshwtg" class="carAction" method="yyshwtg">
+		</action>
+		<action name="bjadd" class="carAction" method="bjadd">
+		</action>
+		<action name="bjdel" class="carAction" method="bjdel">
+		</action>
+		<action name="bjmana" class="carAction" method="bjmana">
+			<result name="success">/admin/bjlist.jsp</result>
+		</action>
+		<action name="xfadd" class="carAction" method="xfadd">
+		</action>
+		<action name="xfdel" class="carAction" method="xfdel">
+		</action>
+		<action name="xfmana" class="carAction" method="xfmana">
+			<result name="success">/admin/xflist.jsp</result>
+		</action>
+		
+		<action name="gzadd" class="carAction" method="gzadd">
+		</action>
+		<action name="gzdel" class="carAction" method="gzdel">
+		</action>
+		<action name="gzmana" class="carAction" method="gzmana">
+			<result name="success">/admin/gzlist.jsp</result>
+		</action>
+		
+		<action name="cjmana" class="carAction" method="cjmana">
+			<result name="success">/admin/cjlist.jsp</result>
+		</action>
+		
+		<action name="cjmana2" class="carAction" method="cjmana2">
+			<result name="success">/admin/cjlist2.jsp</result>
+		</action>
+		<action name="cjaddbefore" class="carAction" method="cjaddbefore">
+			<result name="success">/admin/cjadd.jsp</result>
+		</action>
+		<action name="cjtj" class="carAction" method="cjtj">
+			<result name="success">/admin/cjtj.jsp</result>
+		</action>
+		
+		<action name="cjadd" class="carAction" method="cjadd">
+		</action>
+		<action name="cjdel" class="carAction" method="cjdel">
+		</action>
+		
+			<action name="qjmana" class="carAction" method="qjmana">
+			<result name="success">/admin/qjlist.jsp</result>
+		</action>
+			<action name="qjmana2" class="carAction" method="qjmana2">
+			<result name="success">/admin/qjlist2.jsp</result>
+		</action>
+		<action name="qjtj" class="carAction" method="qjtj">
+			<result name="success">/admin/qjtj.jsp</result>
+		</action>
+		
+		<action name="qjaddbefore" class="carAction" method="qjaddbefore">
+			<result name="success">/admin/qjadd.jsp</result>
+		</action>
+		
+		
+		<action name="qjadd" class="carAction" method="qjadd">
+		</action>
+		<action name="qjdel" class="carAction" method="qjdel">
+		</action>
+		<action name="qjtg" class="carAction" method="qjtg">
+		</action>
+		<action name="qjbtg" class="carAction" method="qjbtg">
+		</action>
+		
+		<action name="zymana" class="carAction" method="zymana">
+			<result name="success">/admin/zylist.jsp</result>
+		</action>
+			<action name="zymana2" class="carAction" method="zymana2">
+			<result name="success">/admin/zylist2.jsp</result>
+		</action>
+		
+		<action name="zyaddbefore" class="carAction" method="zyaddbefore">
+			<result name="success">/admin/zyadd.jsp</result>
+		</action>
+		<action name="zytj" class="carAction" method="zytj">
+			<result name="success">/admin/zytj.jsp</result>
+		</action>
+		
+		<action name="zyadd" class="carAction" method="zyadd">
+		</action>
+		<action name="zydel" class="carAction" method="zydel">
+		</action>
+		
+		
+		<action name="xwmana" class="xwAction" method="mana">
+			<result name="success">/admin/xwlist.jsp</result>
+		</action>
+		<action name="xwmana2" class="xwAction" method="mana2">
+			<result name="success">/admin/xwlist2.jsp</result>
+		</action>
+		<action name="xwmodifybefore" class="xwAction" method="modifybefore">
+			<result name="success">/admin/xwmodify.jsp</result>
+		</action>
+		
+		<action name="xwadd" class="xwAction" method="add">
+		</action>
+		<action name="xwdel" class="xwAction" method="del">
+		</action>
+		<action name="xwmodify" class="xwAction" method="modify">
+		</action>
+		
+		
+		<action name="zpmodifybefore" class="zpAction" method="modifybefore">
+			<result name="success">/admin/zpmodify.jsp</result>
+		</action>
+		<action name="zpmana" class="zpAction" method="mana">
+			<result name="success">/admin/zplist.jsp</result>
+		</action>
+		
+		<action name="zpaddbefore" class="zpAction" method="zpaddbefore">
+			<result name="success">/admin/zpadd.jsp</result>
+		</action>
+		
+		<action name="zpmana2" class="zpAction" method="mana2">
+			<result name="success">/admin/zplist2.jsp</result>
+		</action>
+		<action name="zpadd" class="zpAction" method="add">
+		</action>
+		<action name="zpdel" class="zpAction" method="del">
+		</action>
+		<action name="zpmodify" class="zpAction" method="modify">
+		</action>
+		
+		
+		<action name="ltmana" class="zpAction" method="ltmana">
+			<result name="success">/admin/ltlist.jsp</result>
+		</action>
+		<action name="ltadd" class="zpAction" method="ltadd">
+		</action>
+		<action name="ltdel" class="zpAction" method="ltdel">
+		</action>
+		
+    </package>
+</struts>
