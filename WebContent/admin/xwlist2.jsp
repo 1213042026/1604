@@ -18,6 +18,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="<%=path %>/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/font-awesome.min.css" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/ace.min.css" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/ace-rtl.min.css" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/ace-skins.min.css" />
+<script src="<%=path %>/admin/assets/js/ace-extra.min.js"></script>
+<script src="<%=path %>/admin/assets/js/jquery-2.0.3.min.js"></script>
+<script src="<%=path %>/admin/assets/js/bootstrap.min.js"></script>
+<script src="<%=path %>/admin/assets/js/typeahead-bs2.min.js"></script>
+<script src="<%=path %>/admin/assets/js/ace-elements.min.js"></script>
+<script src="<%=path %>/admin/assets/js/ace.min.js"></script>
+
 <link rel="stylesheet" href="<%=path %>/admin/css/global.css" type="text/css"/>
 <link rel="stylesheet" href="<%=path %>/admin/css/list.css" type="text/css"/>
 <link rel="stylesheet" href="<%=path %>/admin/css/menu.css" type="text/css"/>
@@ -151,52 +163,77 @@
 <!-- content -->
 <div class="content">
 <div class="content_box">
-<div class="current">通知查看</div>
+<div class="breadcrumbs" id="breadcrumbs">
+	<script type="text/javascript">
+		try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+	</script>
+
+	<ul class="breadcrumb">
+		<li>
+			<a href="#">通知查看</a>
+		</li>
+	</ul>
+</div>
 <div class="infolist">
  <form id="memberForm">
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<table id="sample-table-1" class="table table-striped table-bordered table-hover">
+  <thead>
   <tr>
-    <td colspan="7" class="title">
-   
-    </td>
-    </tr>
-  <tr class="line_g hover_bg">
-    <td width="10%" align="center"><strong>标题</strong></td>
-    <td width="10%" align="center"><strong>内容</strong></td>
-    <td width="10%" class="jianju10"><strong>发布时间</strong></td>
-    <td width="10%" align="center"><strong>图片</strong></td>
-    <td width="12%" align="center"><strong>发布人</strong></td>
+    <th><strong>标题</strong></th>
+    <th><strong>内容</strong></th>
+    <th><strong>发布时间</strong></th>
+    <th><strong>图片</strong></th>
+    <th><strong>发布人</strong></th>
   </tr>
-  
+  <tbody>
    <%
 			for(int i = 0;i<list.size();i++){
 				Xw bean = (Xw)list.get(i);
 				String pic=path+"/"+bean.getUrl();
 			%>
-  <tr class="line_g hover_bg">
-    <td align="center"><%=bean.getTitles() %></td>
-    <td align="center"><%=bean.getDescs() %></td>
-    <td class="jianju10"><%=bean.getTimes() %></td>
-    <td align="center"><img alt="" src="<%=pic%>" height="100" width="100"></td>
-    <td align="center"><%=bean.getRealname() %></td>
+  <tr>
+    <td class="vt-al"><%=bean.getTitles() %></td>
+    <td class="vt-al"><%=bean.getDescs() %></td>
+    <td class="vt-al"><%=bean.getTimes() %></td>
+    <td class="vt-al"><img alt="" src="<%=pic%>" height="100" width="100"></td>
+    <td class="vt-al"><%=bean.getRealname() %></td>
   </tr>
   <%} %>
   <tr class="title">
     <td colspan="7" valign="middle">
-    
-    <div class="page fright">
-    <ul>
-     <li>共<strong class="color_red"><%=totleNum %></strong>条</li>
-     <li><a href="#" onclick="frist()">首页</a></li>
-     <li><a href="#" onclick="back()">上一页</a></li>
-     <li><%=currentPage %>/<%=totlePage %></li>
-     <li><a href="#" onclick="next()">下一页</a></li>
-     <li><a href="#" onclick="last()">尾页</a></li>
-     
-    </ul>
-    </div>
+    <div>
+		<ul class="pagination">
+			<li>
+				<a href="#">共<%=totleNum %>条</a>
+			</li>
+
+			<li>
+				<a href="#" onclick="frist()">首页</a>
+			</li>
+
+			<li>
+				<a href="#" onclick="back()">上一页</a>
+			</li>
+
+			<li class="active">
+				<a href="#"><%=currentPage %>/<%=totlePage %></a>
+			</li>
+
+			<li>
+				<a href="#" onclick="next()">
+					下一页
+				</a>
+			</li>
+
+			<li>
+				<a href="#" onclick="last()">尾页</a>
+			</li>
+		</ul>
+	</div>
+
     </td>
     </tr>
+    </tbody>
 </table>
 </form>
 

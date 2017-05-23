@@ -14,6 +14,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="<%=path %>/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/font-awesome.min.css" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/ace.min.css" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/ace-rtl.min.css" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/ace-skins.min.css" />
+<script src="<%=path %>/admin/assets/js/ace-extra.min.js"></script>
+<script src="<%=path %>/admin/assets/js/jquery-2.0.3.min.js"></script>
+<script src="<%=path %>/admin/assets/js/bootstrap.min.js"></script>
+<script src="<%=path %>/admin/assets/js/typeahead-bs2.min.js"></script>
+<script src="<%=path %>/admin/assets/js/ace-elements.min.js"></script>
+<script src="<%=path %>/admin/assets/js/ace.min.js"></script>
+
 <link rel="stylesheet" href="<%=path %>/admin/css/global.css" type="text/css"/>
 <link rel="stylesheet" href="<%=path %>/admin/css/list.css" type="text/css"/>
 <link rel="stylesheet" href="<%=path %>/admin/css/menu.css" type="text/css"/>
@@ -24,7 +36,22 @@
 <!-- content -->
 <div class="content">
 <div class="content_box">
-<div class="current">回复新增</div>
+
+<div class="breadcrumbs" id="breadcrumbs">
+	<script type="text/javascript">
+		try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+	</script>
+
+	<ul class="breadcrumb">
+		<li>
+			<i class="icon-home home-icon"></i>
+			<a href="#">首页</a>
+		</li>
+		<li>用户留言</li>
+		<li class="active">新增回复</li>
+	</ul>
+</div>
+
 <script type="text/javascript">
 $(function (){
 	$("input.mh_date").manhuaDate({					       
@@ -56,22 +83,22 @@ function ok(){
 <div class="infolist">
 <form method="post" action="<%=path %>/hf.action" method="post" name="ThisForm" >
 <input type="hidden" id="id" name="id" value="<%=id %>">
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<table id="sample-table-1" class="table table-striped table-bordered table-hover">
   <tr>
-    <td colspan="6" class="title center">回复信息 
+    <td colspan="6">回复信息 
     </td>
     </tr>
   
-   <tr class="line_g">
-    <td width="10%" class="jianju10">内容：</td>
-    <td width="90%" class="jianju20">
-    <textarea rows="20" cols="50" id="descs" name="descs"></textarea>
+   <tr>
+    <td>内容：</td>
+    <td>
+    <textarea rows="20" cols="58" style="resize: none;"  id="descs" name="descs"></textarea>
     
     </td>
   </tr>
-  <tr class="line_g">
-    <td colspan="2">
-    <input type="button" value="保存" class="btn" onclick="ok()"/>
+  <tr>
+    <td colspan="2" style="text-align: center;">
+    <button type="button" class="btn btn-info" onclick="ok()">保存<i class="icon-arrow-right icon-on-right bigger-110"></i></button>
     </td>
     </tr>
 </table>

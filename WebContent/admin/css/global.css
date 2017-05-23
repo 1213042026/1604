@@ -100,3 +100,8 @@ a:hover{text-decoration:none;}
 .subnav ul li a{width:67px; height:58px; padding-top:8px; float:left;}
 .subnav ul li a:hover,.subtab{background:url(../images/subnav_bg.png) no-repeat;}
 .subnav ul li p{line-height:30px;}
+
+.breadcrumb {
+	font-size: 21px;
+	line-height: 38px;
+}

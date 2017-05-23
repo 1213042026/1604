@@ -18,6 +18,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="<%=path %>/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/font-awesome.min.css" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/ace.min.css" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/ace-rtl.min.css" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/ace-skins.min.css" />
+<script src="<%=path %>/admin/assets/js/ace-extra.min.js"></script>
+<script src="<%=path %>/admin/assets/js/jquery-2.0.3.min.js"></script>
+<script src="<%=path %>/admin/assets/js/bootstrap.min.js"></script>
+<script src="<%=path %>/admin/assets/js/typeahead-bs2.min.js"></script>
+<script src="<%=path %>/admin/assets/js/ace-elements.min.js"></script>
+<script src="<%=path %>/admin/assets/js/ace.min.js"></script>
+
 <link rel="stylesheet" href="<%=path %>/admin/css/global.css" type="text/css"/>
 <link rel="stylesheet" href="<%=path %>/admin/css/list.css" type="text/css"/>
 <link rel="stylesheet" href="<%=path %>/admin/css/menu.css" type="text/css"/>
@@ -151,59 +163,91 @@
 <!-- content -->
 <div class="content">
 <div class="content_box">
-<div class="current">品牌管理</div>
+<div class="breadcrumbs" id="breadcrumbs">
+	<script type="text/javascript">
+		try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+	</script>
+
+	<ul class="breadcrumb">
+		<li>
+			<i class="icon-home home-icon"></i>
+			<a href="#">首页</a>
+		</li>
+		<li class="active">品牌管理</li>
+	</ul>
+</div>
+
 <div class="infolist">
  <form id="memberForm">
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td colspan="7" class="title">
-    <ul class="zsgc fleft">
-      <li><a href="#" onclick="add()">新增</a></li>
-      <li><a href="#" onclick="deletes()">删除</a></li>
-    </ul>
-   
-    </td>
-    </tr>
-  <tr class="line_g hover_bg">
-    <td width="5%" align="center">
-      #
-    </td>
-    <td width="10%" align="center"><strong>品牌名称</strong></td>
-    <td width="10%" align="center"><strong>品牌车辆数</strong></td>
-    
-  </tr>
+ <div class="row">
+	<div class="col-xs-12">
+	<div class="row">
+	<div class="col-xs-12">
+	<div class="table-responsive">
+	<div>
+	<a style="margin: 2px 10px 2px 0px;" href="javascript:void(0);" class="btn btn-sm btn-info" onclick="add()"><i class="icon-plus bigger-120"></i>新增</a>
+	<a style="margin: 2px 10px 2px 0px;" href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="deletes()"><i class="icon-trash bigger-120"></i>删除</a>
+	</div>
+<table id="sample-table-1" class="table table-striped table-bordered table-hover">
+    <thead>
+    <tr>
+			<th class="center">
+				
+			</th>
+			<th>品牌名称</th>
+			<th>品牌车辆数</th>
+		</tr>
+	</thead>
+  	
+  	<tbody>
   
    <%
 			for(int i = 0;i<list.size();i++){
 				Pp bean = (Pp)list.get(i);
 			%>
-  <tr class="line_g hover_bg">
-    <td width="5%" align="center">
-      <p>
-        <label>
-        <input type="checkbox" name="selectFlag" id="selectFlag" class="checkbox1"
-                                       value="<%=bean.getId()%>"></label>
-      </p>
+  <tr>
+    <td class="vt-al">
+    <label>
+			<input type="checkbox" class="ace" name="selectFlag" id="selectFlag" value="<%=bean.getId()%>" />
+			<span class="lbl"></span>
+		</label>
    </td>
-    <td align="center"><%=bean.getNames() %></td>
-    <td align="center"><%=bean.getNums() %></td>
+    <td class="vt-al"><%=bean.getNames() %></td>
+    <td class="vt-al"><%=bean.getNums() %></td>
     
   </tr>
   <%} %>
   <tr class="title">
     <td colspan="7" valign="middle">
-    
-    <div class="page fright">
-    <ul>
-     <li>共<strong class="color_red"><%=totleNum %></strong>条</li>
-     <li><a href="#" onclick="frist()">首页</a></li>
-     <li><a href="#" onclick="back()">上一页</a></li>
-     <li><%=currentPage %>/<%=totlePage %></li>
-     <li><a href="#" onclick="next()">下一页</a></li>
-     <li><a href="#" onclick="last()">尾页</a></li>
-     
-    </ul>
-    </div>
+    <div>
+		<ul class="pagination">
+			<li>
+				<a href="#">共<%=totleNum %>条</a>
+			</li>
+
+			<li>
+				<a href="#" onclick="frist()">首页</a>
+			</li>
+
+			<li>
+				<a href="#" onclick="back()">上一页</a>
+			</li>
+
+			<li class="active">
+				<a href="#"><%=currentPage %>/<%=totlePage %></a>
+			</li>
+
+			<li>
+				<a href="#" onclick="next()">
+					下一页
+				</a>
+			</li>
+
+			<li>
+				<a href="#" onclick="last()">尾页</a>
+			</li>
+		</ul>
+	</div>
     </td>
     </tr>
 </table>

@@ -25,7 +25,7 @@
 .width300{width:300px; margin-right:5px;}
 .width200{width:200px;}
 .width80{width:80px;}
-.btn{background:url(../images/btn_bg.png) no-repeat; width:66px; height:26px; border:none; cursor:pointer; float:left; margin-left:10px; margin-bottom:10px;}
+/*.btn{background:url(../images/btn_bg.png) no-repeat; width:66px; height:26px; border:none; cursor:pointer; float:left; margin-left:10px; margin-bottom:10px;}*/
 .wenben{width:99%; margin:10px 0px; border:none;}
 /*日历*/
 .calendar{border:1px solid #c8c8c8; padding-bottom:10px;}

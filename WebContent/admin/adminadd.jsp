@@ -13,6 +13,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="<%=path %>/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/font-awesome.min.css" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/ace.min.css" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/ace-rtl.min.css" />
+<link rel="stylesheet" href="<%=path %>/admin/assets/css/ace-skins.min.css" />
+<script src="<%=path %>/admin/assets/js/ace-extra.min.js"></script>
+<script src="<%=path %>/admin/assets/js/jquery-2.0.3.min.js"></script>
+<script src="<%=path %>/admin/assets/js/bootstrap.min.js"></script>
+<script src="<%=path %>/admin/assets/js/typeahead-bs2.min.js"></script>
+<script src="<%=path %>/admin/assets/js/ace-elements.min.js"></script>
+<script src="<%=path %>/admin/assets/js/ace.min.js"></script>
+
 <link rel="stylesheet" href="<%=path %>/admin/css/global.css" type="text/css"/>
 <link rel="stylesheet" href="<%=path %>/admin/css/list.css" type="text/css"/>
 <link rel="stylesheet" href="<%=path %>/admin/css/menu.css" type="text/css"/>
@@ -23,7 +35,21 @@
 <!-- content -->
 <div class="content">
 <div class="content_box">
-<div class="current">客户新增</div>
+<div class="breadcrumbs" id="breadcrumbs">
+  <script type="text/javascript">
+    try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+  </script>
+
+  <ul class="breadcrumb">
+    <li>
+      <i class="icon-home home-icon"></i>
+      <a href="#">首页</a>
+    </li>
+    <li class="active">客户管理</li>
+    <li class="active">客户新增</li>
+  </ul>
+</div>
+
 <script type="text/javascript">
 $(function (){
 	$("input.mh_date").manhuaDate({					       
@@ -54,40 +80,44 @@ function ok(){
 </script> 
 <div class="infolist">
 <form method="post" action="<%=path %>/adminadd.action" method="post" name="ThisForm">
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<table id="sample-table-1" class="table">
+<thead>
+    <tr><th colspan="2" style="text-align: center;">客户信息 </th>
+    </tr>
+    </thead>
+    <tbody>
+
   <tr>
-    <td colspan="6" class="title center">客户信息 
+    <td>用户名：</td>
+    <td><input type="text" id="username" name="username" class="text width300" /></td>
+  </tr>
+  <tr>
+    <td>密码：</td>
+    <td><input type="text" id="password" name="password" class="text width300" /></td>
+  </tr>
+   <tr>
+    <td>电话：</td>
+    <td><input type="text" id="tel" name="tel" class="text width300" /></td>
+  </tr>
+   <tr>
+    <td>邮箱：</td>
+    <td><input type="text" id="email" name="email" class="text width300" /></td>
+  </tr>
+   <tr>
+    <td>真实姓名：</td>
+    <td><input type="text" id="realname" name="realname" class="text width300" /></td>
+  </tr>
+  <tr>
+    <td>身份证：</td>
+    <td><input type="text" id="no" name="no" class="text width300" /></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">
+    <button type="button" class="btn btn-info" onclick="ok()">保存<i class="icon-arrow-right icon-on-right bigger-110"></i></button>
+
     </td>
     </tr>
-  <tr class="line_g">
-    <td width="10%" class="jianju10">用户名：</td>
-    <td width="90%" class="jianju20"><input type="text" id="username" name="username" class="text width300" /></td>
-  </tr>
-  <tr class="line_g">
-    <td width="10%" class="jianju10">密码：</td>
-    <td width="90%" class="jianju20"><input type="text" id="password" name="password" class="text width300" /></td>
-  </tr>
-   <tr class="line_g">
-    <td width="10%" class="jianju10">电话：</td>
-    <td width="90%" class="jianju20"><input type="text" id="tel" name="tel" class="text width300" /></td>
-  </tr>
-   <tr class="line_g">
-    <td width="10%" class="jianju10">邮箱：</td>
-    <td width="90%" class="jianju20"><input type="text" id="email" name="email" class="text width300" /></td>
-  </tr>
-   <tr class="line_g">
-    <td width="10%" class="jianju10">真实姓名：</td>
-    <td width="90%" class="jianju20"><input type="text" id="realname" name="realname" class="text width300" /></td>
-  </tr>
-  <tr class="line_g">
-    <td width="10%" class="jianju10">身份证：</td>
-    <td width="90%" class="jianju20"><input type="text" id="no" name="no" class="text width300" /></td>
-  </tr>
-  <tr class="line_g">
-    <td colspan="2">
-    <input type="button" value="保存" class="btn" onclick="ok()"/>
-    </td>
-    </tr>
+    </tbody>
 </table>
 </form>
 </div>
